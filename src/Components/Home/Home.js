@@ -57,7 +57,7 @@ const Home = ({ sections, activeSection }) => {
           <h1 class="sec_title">Raviteja</h1>
           <p class="section__text__p2">FullStack Developer</p>
           <div class="btn-container">
-            <a href="https://drive.google.com/file/d/1huxr1e8rH4_LJzJV69_3zUeCx-Y5YwfP/view?usp=sharing">
+            <a href="https://drive.google.com/file/d/1nTyCCWwL3reUShH5xtr2aNanmezDPFWD/view?usp=sharing">
               <button
                 class="btn btn-color-2"
                 onclick="window.open('./assets/resume-example.pdf')"
