@@ -1,0 +1,90 @@
+.about{
+    height: 90vh;
+    padding-top: 12vh;
+}
+.know{
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-size: 1.2vw;
+}
+.me{
+    font-size: 2.2rem;
+    text-align: center;
+}
+.content{
+    height:80vh ;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    margin-left: 10vw;
+}
+.img{
+    height: 400px;
+    width: 400px;
+    border-radius: 40px;
+}
+
+.education{
+    display: flex;
+    gap: 5vw;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.edc_data{
+    height: 20vh;
+    width: 20vw;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ex-icon,.edu-icon{
+    height: 6vh;
+    width: 10vw;
+}
+.paragraph{
+    font-size: 1.1vw;
+    width: 50vw;
+}
+
+@media(max-width:600px){
+    .about{
+        padding-top: 8vh;
+    }
+    .know{
+        font-size: 3vw;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+        gap: 5vh;
+        height: 60vh;
+    }
+    .img{
+        width: 200px;
+        height: 200px;
+        margin-top: 5vh;
+    }
+    .education{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3vh;
+        justify-content: center;
+    }
+    .edc_data{
+        width: 40vw;
+        border-radius: 40px;
+    }
+    .paragraph{
+        font-size: 3.6vw;
+        width: 88vw;
+    }
+}

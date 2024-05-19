@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
+import Experience from "./Components/Experience/Experience";
+import Home from "./Components/Home/Home";
+import Projects from "./Components/Projects/Projects";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["about", "experience", "projects", "contact"];
+      const scrollPos = window.scrollY;
+      const newActiveSection = sections.find((section) => {
+        const sectionEl = document.getElementById(section);
+        return (
+          sectionEl.offsetTop <= scrollPos &&
+          sectionEl.offsetTop + sectionEl.offsetHeight > scrollPos
+        );
+      });
+
+      setActiveSection(newActiveSection || "");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const sections = [
+    { id: "about", title: "About" },
+    { id: "experience", title: "Experience" },
+    { id: "projects", title: "Projects" },
+    { id: "contact", title: "Contact" },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Home sections={sections} activeSection={activeSection} />
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+    </>
   );
 }
 
